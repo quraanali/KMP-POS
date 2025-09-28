@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Mouse",
+    "price": 19.99,
+    "taxable": true,
+    "stock": 120,
+    "thumb": "https://exceldisc.com/_next/image?url=https%3A%2F%2Fapiv2.exceldisc.com%2Fmedia%2F78366%2Fconversions%2Flogitech-m185-wireless-mouse-preview.jpg&w=256&q=75"
+  },
+  {
+    "id": 2,
+    "name": "Keyboard",
+    "price": 79.5,
+    "taxable": true,
+    "stock": 45,
+    "thumb": "https://cdna.pcpartpicker.com/static/forever/images/product/45b0317939c539160d3300b4903abf77.256p.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Notebook",
+    "price": 2.5,
+    "taxable": false,
+    "stock": 200,
+    "thumb": "https://bf1af2.akinoncloudcdn.com/products/2024/12/06/166648/1f815701-1b5c-491a-a571-c36a631746b7_size256_cropCenter.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Cable-C",
+    "price": 8.99,
+    "taxable": true,
+    "stock": 300,
+    "thumb": "https://videk-1f835.kxcdn.com/wp-content/uploads/2025/06/2561F-1_catimg-256x256.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Bottle",
+    "price": 12.0,
+    "taxable": false,
+    "stock": 85,
+    "thumb": "https://img-prd-pim.poorvika.com/prodvarval/milton-steel-convey-insulated-water-bottle-600-ml-multi-color-thumbnail.png"
+  },
+  {
+    "id": 6,
+    "name": "Speaker",
+    "price": 45.0,
+    "taxable": true,
+    "stock": 60,
+    "thumb": "https://bf1af2.akinoncloudcdn.com/products/2024/11/18/155214/334c2fc4-a996-4cef-b4db-e869dbf5b686_size256_cropCenter.jpg"
+  },
+  {
+    "id": 7,
+    "name": "LED  Lamp",
+    "price": 25.75,
+    "taxable": true,
+    "stock": 95,
+    "thumb": "https://ik.imagekit.io/2xkwa8s1i/img/study_lamps/new/Planck/1.jpg?tr=w-256"
+  },
+  {
+    "id": 8,
+    "name": "Chair",
+    "price": 199.99,
+    "taxable": true,
+    "stock": 0,
+    "thumb": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/3849bdd8-5ebc-4535-b4e6-df94b388a11e.jpg;maxHeight=256;maxWidth=256?format=webp"
+  },
+  {
+    "id": 9,
+    "name": "External HD ",
+    "price": 59.99,
+    "taxable": false,
+    "stock": 70,
+    "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDRvz1mGKmIXl3IbpM06MdVFogi1GVtWIPw&s"
+  },
+  {
+    "id": 10,
+    "name": "Stand",
+    "price": 14.5,
+    "taxable": true,
+    "stock": 140,
+    "thumb": "https://bf1af2.akinoncloudcdn.com/products/2024/09/06/29469/8b2c2fa9-fe28-4df3-a948-39337855e6ef_size256_cropCenter.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Mug",
+    "price": 6.99,
+    "taxable": false,
+    "stock": 220,
+    "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJVylu2ONhinHaNfIInXj7r_XQQwGyAMSdBQ&s"
+  },
+  {
+    "id": 12,
+    "name": "Backpack",
+    "price": 39.99,
+    "taxable": true,
+    "stock": 80,
+    "thumb": "https://www.stubbleandco.com/cdn/shop/files/everyday-20l-black-studio-interior-laptop-pocket.jpg?v=1756191837&width=256"
+  },
+  {
+    "id": 13,
+    "name": "Smartwatch",
+    "price": 149.0,
+    "taxable": true,
+    "stock": 50,
+    "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAo4QodkD6OK8fj8g7Sop7T7XQWZ2_9mFr1Q&s"
+  },
+  {
+    "id": 14,
+    "name": "Charger",
+    "price": 29.99,
+    "taxable": false,
+    "stock": 110,
+    "thumb": "https://tradinggoo.com/_next/image?url=https%3A%2F%2Fadmin.tradinggoo.com%2Fuploads%2Fproducts%2Fthumbnail%2F1738580686_IMG-1410-1024x1024-2x-1.jpg&w=256&q=75"
+  },
+  {
+    "id": 15,
+    "name": "HDMI Cable",
+    "price": 9.5,
+    "taxable": true,
+    "stock": 175,
+    "thumb": "https://www.keydigital.org/web/image/product.image/222/image_256/Key%20Digital%20hdmi%20ultra%20high%20speed%20cable%20Front%20View?unique=c50b7ec"
+  },
+  {
+    "id": 16,
+    "name": "Earbuds",
+    "price": 89.99,
+    "taxable": false,
+    "stock": 65,
+    "thumb": "https://www.jlab.com/cdn/shop/files/1GOPopANCBlack_678dc291-de4c-47a6-8e98-e8cfb8213835.jpg?v=1752447271&width=256"
+  },
+  {
+    "id": 17,
+    "name": "Cushion",
+    "price": 18.75,
+    "taxable": true,
+    "stock": 90,
+    "thumb": "https://ik.imagekit.io/2xkwa8s1i/img/npl_modified_images/Back_Cushion/WBSCMFBLS/WBSCMFBLS_1.jpg?tr=w-256"
+  },
+  {
+    "id": 18,
+    "name": "Yoga Mat",
+    "price": 22.0,
+    "taxable": false,
+    "stock": 130,
+    "thumb": "https://www.olympiasouq.com/web/image/product.template/23545/image_256"
+  },
+  {
+    "id": 19,
+    "name": "Shoes",
+    "price": 120.0,
+    "taxable": true,
+    "stock": 40,
+    "thumb": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM7Dgi8kdTCVuT5rpHhpn61Zu4-LRBhN0rzw&s"
+  },
+  {
+    "id": 20,
+    "name": "Sunglasses",
+    "price": 49.99,
+    "taxable": false,
+    "stock": 75,
+    "thumb": "https://eu-images.contentstack.com/v3/assets/blt7dcd2cfbc90d45de/bltf1d4ea97f6ce4da3/623db458e46c430e07e3fedd/wa30-2.jpg?format=pjpg&auto=webp&quality=75%2C90&width=256"
+  }
+]
