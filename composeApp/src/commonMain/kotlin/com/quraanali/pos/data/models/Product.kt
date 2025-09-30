@@ -1,4 +1,4 @@
-package com.quraanali.pos.screens.home
+package com.quraanali.pos.data.models
 
 import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable
@@ -18,4 +18,3 @@ data class Product(
     @SerializedName("thumb")
     var thumb: String
 )
-

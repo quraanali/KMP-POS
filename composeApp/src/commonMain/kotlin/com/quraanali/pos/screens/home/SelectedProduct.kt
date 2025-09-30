@@ -11,4 +11,3 @@ data class SelectedProduct(
     var taxable: Boolean,
     var thumb: String
 )
-

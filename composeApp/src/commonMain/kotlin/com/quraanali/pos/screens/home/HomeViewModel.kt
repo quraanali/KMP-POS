@@ -3,10 +3,12 @@ package com.quraanali.pos.screens.home
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.quraanali.pos.NetworkMonitor
-import com.quraanali.pos.domain.CalculateTotalAndDiscountUseCase
-import com.quraanali.pos.domain.CreateOrderUseCase
-import com.quraanali.pos.domain.GetAllProductsUseCase
+import com.quraanali.pos.data.models.Product
+import com.quraanali.pos.domain.cart.CalculateTotalAndDiscountUseCase
+import com.quraanali.pos.domain.cart.CreateOrderUseCase
+import com.quraanali.pos.domain.home.GetAllProductsUseCase
+import com.quraanali.pos.domain.sync.SyncAllOrdersUseCase
+import com.quraanali.pos.utils.NetworkMonitor
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,10 +16,11 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
-    application: Application,
+    private val application: Application,
     private val getAllProductsUseCase: GetAllProductsUseCase,
     private val createOrderUseCase: CreateOrderUseCase,
-    private val calculateTotalAndDiscountUseCase: CalculateTotalAndDiscountUseCase
+    private val calculateTotalAndDiscountUseCase: CalculateTotalAndDiscountUseCase,
+    private val syncAllOrdersUseCase: SyncAllOrdersUseCase,
 ) : ViewModel() {
     private val networkMonitor = NetworkMonitor(application)
     private val _uiState: MutableStateFlow<HomeUiState> = MutableStateFlow(HomeUiState())
@@ -30,10 +33,21 @@ class HomeViewModel(
             )
         }
 
+        // observing intenet connectivity
         viewModelScope.launch {
-            networkMonitor.isConnected.collect { connected ->
+            networkMonitor.isConnected.collect { isConnected ->
+
+                // for syncing
+                if (isConnected) {
+                    syncAllOrdersUseCase()
+                }
+//                WorkManager.getInstance(application).enqueue(
+//                    OneTimeWorkRequestBuilder<SyncOrdersWorker>().build()
+//                )
+
+                // for UI
                 _uiState.update { current ->
-                    current.copy(isConnected = connected)
+                    current.copy(isConnected = isConnected)
                 }
             }
         }
@@ -134,8 +148,18 @@ class HomeViewModel(
     }
 
     fun checkoutOrder() {
+        _uiState.update {
+            it.copy(
+                isLoading = true
+            )
+        }
+
         viewModelScope.launch {
-            if (createOrderUseCase()) {
+            if (createOrderUseCase(
+                    application = application,
+                    _uiState.value.selectedProductList.toString()
+                )
+            ) {
                 _uiState.update {
                     it.copy(
                         isLoading = false,
@@ -149,7 +173,10 @@ class HomeViewModel(
                 _uiState.update {
                     it.copy(
                         isLoading = false,
-                        errorMessage = "Checkout went wrong!"
+                        selectedProductList = mutableListOf(),
+                        total = null,
+                        discount = null,
+                        errorMessage = "Checkout went wrong!, Switch to OFFLINE mode"
                     )
 
                 }

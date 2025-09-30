@@ -1,8 +1,7 @@
-package com.quraanali.pos.domain
+package com.quraanali.pos.domain.cart
 
 import android.app.Application
 import com.quraanali.pos.screens.home.SelectedProduct
-
 
 class CalculateTotalAndDiscountUseCase(private val application: Application) {
     operator fun invoke(selectedProductList: MutableList<SelectedProduct>): Pair<String?, String?> {

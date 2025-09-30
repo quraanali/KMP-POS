@@ -1,26 +1,36 @@
 package com.quraanali.pos.data
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.launch
+import com.quraanali.pos.data.models.ProductObject
+import comquraanalipos.Orders
 
 class HomeRepository(
-    private val homeApi: HomeApi,
-    private val homeStorage: HomeStorage,
-) {
-    private val scope = CoroutineScope(SupervisorJob())
+    private val homeRemote: HomeRemote,
+    private val homeLocal: HomeLocal,
+) : HomeRemote, HomeLocal {
+    override suspend fun getNextOrderLocalId(): Int = homeLocal.getNextOrderLocalId()
 
-    fun initialize() {
-        scope.launch {
-            refresh()
-        }
+
+    override suspend fun getData(): List<ProductObject> {
+        return homeRemote.getData()
     }
 
-    suspend fun refresh() {
-        homeStorage.saveObjects(homeApi.getData())
+    override suspend fun syncOrders(payload: String): Boolean {
+        return homeRemote.syncOrders(payload)
     }
 
+    override suspend fun createOrder(payload: String): Boolean {
+        return homeRemote.createOrder(payload)
+    }
 
-    suspend fun getNextOrderLocalId(): Int = homeStorage.getNextOrderLocalId()
+    override suspend fun saveOrderLocally(localId: String, payload: String) {
+        homeLocal.saveOrderLocally(localId, payload)
+    }
+
+    override suspend fun getUnsyncedOrders(): List<Orders> {
+        return homeLocal.getUnsyncedOrders()
+    }
+
+    override suspend fun markAsSynced(localId: String) {
+        homeLocal.getUnsyncedOrders()
+    }
 }

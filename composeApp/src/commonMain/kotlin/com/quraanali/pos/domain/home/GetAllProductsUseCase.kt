@@ -1,10 +1,10 @@
-package com.quraanali.pos.domain
+package com.quraanali.pos.domain.home
 
 import android.app.Application
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.quraanali.pos.R
-import com.quraanali.pos.screens.home.Product
+import com.quraanali.pos.data.models.Product
 import java.io.InputStream
 import java.io.InputStreamReader
 

@@ -1,10 +1,10 @@
-package com.quraanali.pos.domain
+package com.quraanali.pos.domain.cart
 
 import android.annotation.SuppressLint
 import android.app.Application
 import android.os.Build
 import android.provider.Settings
-import java.util.*
+import java.util.UUID
 
 class GetDeviceUniqueIdUseCase() {
 

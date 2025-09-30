@@ -1,4 +1,4 @@
-package com.quraanali.pos.data
+package com.quraanali.pos.data.models
 
 import kotlinx.serialization.Serializable
 

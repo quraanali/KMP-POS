@@ -1,6 +1,7 @@
 package com.quraanali.pos.screens.home
 
-import com.quraanali.pos.data.ProductObject
+import com.quraanali.pos.data.models.Product
+import com.quraanali.pos.data.models.ProductObject
 
 data class HomeUiState(
     val isLoading: Boolean = true,

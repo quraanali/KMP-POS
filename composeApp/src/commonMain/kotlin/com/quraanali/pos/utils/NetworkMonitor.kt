@@ -1,4 +1,4 @@
-package com.quraanali.pos
+package com.quraanali.pos.utils
 
 import android.content.Context
 import android.net.ConnectivityManager

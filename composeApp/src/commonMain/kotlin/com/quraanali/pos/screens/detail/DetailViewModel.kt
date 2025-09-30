@@ -2,6 +2,7 @@ package com.quraanali.pos.screens.detail
 
 import androidx.lifecycle.ViewModel
 
-class DetailViewModel() : ViewModel() {
+// not used now
 
+class DetailViewModel() : ViewModel() {
 }

@@ -1,5 +1,6 @@
 package com.quraanali.pos.screens.home
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -17,7 +18,7 @@ fun ProgressLoader(
     modifier: Modifier = Modifier,
 ) {
     Box(
-        modifier = modifier,
+        modifier = modifier.background(Color.Transparent),
         contentAlignment = Alignment.Center,
     ) {
         CircularProgressIndicator(

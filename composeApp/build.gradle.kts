@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinxSerialization)
+    alias(libs.plugins.sqlDelight)
 }
 
 kotlin {
@@ -24,6 +25,11 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.gson)
+            implementation(libs.sqldelight.android.driver)
+            implementation(libs.androidx.work.runtime.ktx)
+            implementation(libs.koin.androidx.workmanager)
+
+
         }
 
         commonMain.dependencies {
@@ -48,6 +54,16 @@ kotlin {
             implementation(libs.koin.compose.viewmodel)
         }
     }
+}
+
+sqldelight {
+    databases {
+        create("AppDatabase") {
+            packageName.set("com.quraanali.pos")
+            generateAsync.set(true)
+        }
+    }
+    linkSqlite = true
 }
 
 android {
@@ -75,6 +91,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+
 }
 
 dependencies {

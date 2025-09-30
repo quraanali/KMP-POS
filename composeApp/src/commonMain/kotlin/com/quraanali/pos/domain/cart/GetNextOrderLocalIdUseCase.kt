@@ -1,7 +1,6 @@
-package com.quraanali.pos.domain
+package com.quraanali.pos.domain.cart
 
 import com.quraanali.pos.data.HomeRepository
-
 
 class GetNextOrderLocalIdUseCase(
     private val homeRepository: HomeRepository,

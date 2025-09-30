@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
 import com.quraanali.pos.R
+import com.quraanali.pos.data.models.Product
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
@@ -51,22 +52,21 @@ fun HomeScreen() {
         Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
         viewModel.clearErrorMsg()
     }
-    Column(modifier = Modifier.fillMaxSize()) {
-        Text(
-            text = if (uiState.isConnected) "Online" else "Offline",
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 12.dp)
-                .background(
-                    if (uiState.isConnected) Color.Green else Color.Red
-                ),
-            color = Color.White,
-            textAlign = androidx.compose.ui.text.style.TextAlign.Center
-        )
+    Box(Modifier.fillMaxSize()) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            Text(
+                text = if (uiState.isConnected) "Online" else "Offline",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 12.dp)
+                    .background(
+                        if (uiState.isConnected) Color.Green else Color.Red
+                    ),
+                color = Color.White,
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
 
-        if (uiState.isLoading) {
-            ProgressLoader(Modifier.fillMaxSize())
-        } else {
+
             Row(
                 modifier = Modifier.fillMaxSize()
             ) {
@@ -86,8 +86,11 @@ fun HomeScreen() {
                 )
             }
         }
-    }
 
+        if (uiState.isLoading) {
+            ProgressLoader(Modifier.fillMaxSize())
+        }
+    }
 }
 
 @Composable
@@ -114,7 +117,6 @@ fun CartView(modifier: Modifier, uiState: HomeUiState, viewModel: HomeViewModel)
                             Text(text = uiState.discount, color = Color(0xFF653F03))
                     }
                     Button(onClick = {
-
                         viewModel.checkoutOrder()
                     }) {
                         Text("Checkout")
